@@ -13,7 +13,7 @@ def addVAFrom(v, p):
     else:
         return addVAFrom (v, p + 1) + v [p]
 
-def addVB(v, p):
+def addVB(v):
      return addVBUp(v, len(v) - 1)
 
 def addVBUp(v, p):
@@ -23,3 +23,4 @@ def addVBUp(v, p):
         return addVBUp(v, p - 1) + v [p]
 
 print(addVA([1,2,3,4,5])) # 15
+print(addVB([1,2,3,4,6])) # 15
