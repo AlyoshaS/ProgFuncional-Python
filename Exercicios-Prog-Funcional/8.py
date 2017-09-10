@@ -9,17 +9,28 @@ def addVA(v):
         if p > (len(v) - 1):
             return 0
         else:
-            return addVAFrom (v, p + 1) + v [p]
+            return addVAFrom (v, p + 1) + v[p]
     return addVAFrom(v, 0)
 
 def addVB(v):
     def addVBUp(v, p):
         if p == 0:
-            return v [p]
+            return v[p]
         else:
-            return addVBUp(v, p - 1) + v [p]
+            return addVBUp(v, p - 1) + v[p]
     return addVBUp(v, len(v) - 1)
 
 
 print(addVA([1,2,3,4,5])) # 15
 print(addVB([1,2,3,4,6])) # 16
+
+
+"""
+outra opção:
+
+def addVA(v):
+    addVAFrom = lambda v, p : 0 if p > (len(v) - 1) else addVAFrom (v, p + 1) + v [p]
+    return addVAFrom(v, 0)
+
+print(addVA([1,2,3,4,5]))
+"""
